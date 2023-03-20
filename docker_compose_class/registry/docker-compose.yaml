@@ -1,0 +1,10 @@
+version: '3'
+services:
+  registry-server:
+    image: registry
+    restart: always
+    container_name: registry-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - /registry-hhs:/var/lib/registry

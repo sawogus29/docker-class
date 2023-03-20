@@ -1,0 +1,17 @@
+version: "3"
+services:
+  registry-server:
+    image: registry
+    ports:
+      - "5000:5000"
+    container_name: registry-server
+  app:
+    image: jc21/registry-ui
+    ports:
+      - 80:80
+    environment:
+      - REGISTRY_HOST=registry-server:5000
+      - REGISTRY_SSL=false
+      - REGISTRY_DOMAIN=registry-server:5000
+      - REGISTRY_STORAGE_DELETE_ENABLED=
+    restart: on-failure

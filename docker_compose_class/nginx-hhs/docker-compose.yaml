@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nginx-hhs:
+    image: nginx
+    build: .
+    container_name: nginx-hhs
+    ports:
+      - "1000:80"
