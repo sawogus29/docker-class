@@ -24,4 +24,4 @@ services:
       - db1:/var/lib/mysql
 volumes:
   db1:
-    external: true
+    external: true  # 이거 빼먹으면 mysql 일반 user 로그인이 안 됨 (TODO: 이유 알아보기)
